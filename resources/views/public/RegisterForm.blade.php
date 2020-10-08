@@ -1,9 +1,11 @@
-extends('welcomePage')
-@section('form')
-<div>
-	<form method="post" action="">
-		<input type="text" name="name">
-		<input type="password" name="pass">
-	</form>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create page!</title>
+</head>
+<body>
+	@section('form')
+		
 @endsection
+</body>
+</html>
