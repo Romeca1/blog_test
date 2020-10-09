@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,10 +7,10 @@
 </head>
 <body>
 	<div class="form_div">
-		<form method="post" action="{{asset('/Register_Validation')}}">
+		<form method="post" action="{{url('/register')}}">
 			{{@csrf_field()}}
 			<div class="logo_form_div">
-				<img src="{{asset('img/kissclipart-astronaut.png')}}">
+				<img src="{{asset('img/blogIcon.png')}}">
 			</div>
 			<div class="input_name_div">
 				<label>
@@ -23,7 +22,7 @@
 			<div class="input_email_div">
 				<label>
 					<p class="input-paragraph">Enter email</p>
-					<input type="text" name="name" placeholder="Enter email:">
+					<input type="text" name="email" placeholder="Enter email:">
 					<span class="error_email"></span>
 				</label>
 			</div>
@@ -47,15 +46,17 @@
 			</div>
 		</form>
 	</div>
-	<p>{{$errors}}</p>
+	<ul>
+		
+	</ul>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			
 			$('input').on('focus',function(){
-				$(this).css("background-color","#76188C");
+				$(this).css("background-color","#C29B1B");
 			});
 			$('input').on('focusout',function(){
-				$(this).css("background-color","#010101");
+				$(this).css("background-color","#F1CF60");
 			});
 		});
 	</script>
