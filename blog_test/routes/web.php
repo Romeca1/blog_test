@@ -7,17 +7,12 @@ use App\Http\Controllers\HomeControler;
 
 Route::get('/register',[HomeControler::class, "Register_form"]);
 Route::post('/register',[HomeControler::class, "RegisterValidation"]);
-Route::get('/testHomePage',function()
-{
-	return view('public.homePage');
-});
 Route::get('/login',[HomeControler::class,"Login_Form"]);
 Route::post('/login',[HomeControler::class,"LoginValidation"]);
-
-Route::get('/testHomePage/Create',function()
+//Create Route
+Route::get('/HomePage/Create/{user_id}',function($user_id)
 {
-	return view('public.ToHomePageMenu.CreateBlogPage');
+	return view('public.ToHomePageMenu.CreateBlogPage',["user_id" => $user_id]);
 });
-
-//------------------//
+Route::post('/HomePage/Create/{user_id}',[HomeControler::class,"CreateValidation"]);
 Route::get('/',[HomeControler::class,"WelcomePage"]);

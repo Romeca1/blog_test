@@ -8,12 +8,15 @@
 	<div class="nav_div">
 		<ul>
 			<li><a href="">ABOUT</a></li>
-			<li><a href="{{asset('/testHomePage/Create')}}">CREATE BLOG</a></li>
+			<li><a href="{{asset('/testHomePage/Create/$user_id')}}">CREATE BLOG</a></li>
 			<li><a href="">NEW</a></li>
 		</ul>
 	</div>
+	<?php
+		echo $user_id;
+	?>
 	<div class="body_div">
-		<h1>{{$user_name}}</h1>
+	
 	</div>
 </body>
 </html>
