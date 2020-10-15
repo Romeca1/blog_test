@@ -1,60 +1,41 @@
 body{
-	background-image: url('../img/blogHome.jpg');
+	background-image: url('../img/welcomePageImg.jpg');
+	padding:0;
+	margin:0;
 }
-button{
-	position: absolute;
+h1{
+	color:white;
+	font-size: 25px;
+}
+.head_div{
+	border-bottom:1px solid white;
+}
+ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+li{
+	float: left;
+}
+li a{
+	text-decoration: none;
+	display: block;
+	padding:10px 15px;
+	background-color: white;
+	color:black;
+	margin-top:10px;
 	border: 2px solid black;
-	border-radius: 5px;
-	padding: 15px 20px;
-	top:40%;
-	left:45%;
+	border-radius:10px;
 }
-.form_div{
-	position: absolute;
-	top:20%;
-	left:35%;
-	border-radius: 5px;
-	border:1px solid black;
-	box-shadow: -1px -1px 3px 4px;
-	padding: 15px 100px;
-}
-.input_name_div, .input_password_div{
-	padding: 5px;
-}
-.submit_div{
-	margin-left:65px;
-	margin-top: 15px;
-}
-.a_forgotpassword{
-	color:white;
-	margin-left: 5px;
-}
-.a_forgotpassword:hover{
-	color:#76188C;
-}
-img{
-	width: 100px;
-	height: 100px;
-	margin-left: 55px;
-}
-input{
-	padding: 10px 20px;
-	border-radius: 4px;
-	background-color: #F1CF60;
+li a:hover{
+	background-color: #333;
 	color:white;
 }
-.input_submit_button{
-	background-color: #010101;
-	color:white;
-	border:none;
-	border-bottom:4px solid white;
+.btn_Reg{
+	margin-left:140px;
 }
-.input_submit_button:hover{
-	background-color:#F1CF60 ;	 
+.btn_Log{
+	margin-left:15px;
 }
-.input-paragraph{
-	color :white;
-	font-family: arial;
-
-}
-

@@ -6,6 +6,13 @@
 </head>
 <body>
 	<div class="form_div">
+		<div class="errors_div">
+			@if(isset($error))
+				<span class="error">
+					{{$error}}
+				</span>
+			@endif
+		</div>
 		<form method="post" action="{{url('/login')}}">
 			{{csrf_field()}}
 			<div class="user_logo_div">
@@ -13,12 +20,14 @@
 			</div>
 			<div class="user_log_email_div">
 				<label>
-					<input type="email" name="email">	
+					<p>Enter your email</p>
+					<input type="email" name="email">
 				</label>
 			</div>
 			<div class="user_log_pass_div">
 				<label>
-					<input type="password" name="pass">	
+					<p>Enter your password</p>
+					<input type="password" name="pass">
 				</label>
 			</div>
 			<div class="user_submit_div">

@@ -1,0 +1,58 @@
+body{
+	padding: 0;
+	margin:0;
+	background-image: url('');
+}
+.table_posts{
+	margin-left: 23%;
+	margin-right: 23%;
+	padding: 5px;
+	border:1px solid black;
+}
+.row_posts{
+	border-radius: 10px;
+}
+.back_to_homePage_btn{
+	padding: 15px 20px;
+	background-color: #333;
+	color:white;
+	text-decoration: none;
+	border-radius: 20px;
+}
+.body{
+	display: none;
+}
+h3{
+	text-align: center;
+}
+ul{
+	list-style-type: none;
+	padding: 0;
+	margin-left: 65px;
+	overflow: hidden;
+	background-color: white;
+}
+li{
+	float: left;
+}
+li a{
+	padding: 15px 60px;
+}
+li a:hover{
+	text-decoration: none;	
+}
+a{
+	color:white;
+}
+.Del_btn{
+	background-color: red;
+	color:white;
+}
+.UpD_btn{
+	background-color: blue;
+	color:white;	
+}
+.See_btn{
+	background-color: green;
+	color:white;
+}

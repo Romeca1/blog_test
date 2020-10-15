@@ -1,5 +1,5 @@
 body{
-	background-image: url('../img/blogHome.png.jpg');
+	background-image: url('../img/blogHome.jpg');
 	padding: 0;
 	margin: 0;
 }
@@ -32,4 +32,19 @@ li a:hover{
 }
 .div_CreatePage{
 	display:none;
+}
+.messeg_div{
+	width: 95%;
+	border-radius: 20px;
+	margin-top: 20px;
+	margin-left:10px;
+	margin-right: 10px;
+	padding: 15px 20px;
+	background-color: #333;
+}
+.messeg{
+	color:white;
+	font-size: 40px;
+	text-align:center;
+	font-family: sans-serif;
 }
