@@ -12,7 +12,6 @@ class HomeControler extends Controller
 	public function WelcomePage(){
 		return view('public.WelcomePage');
 	}
-
 	public function Register_Form()
 	{
 		return view('public.RegisterPage');
@@ -23,12 +22,41 @@ class HomeControler extends Controller
 	}
 
 	public function HomePage($log_user_id){
-		return view('public.homePage',["log_user_id" => $log_user_id]);
+		$posts = User_Post::all();
+		return view('public.homePage',["log_user_id" => $log_user_id,"posts"=> $posts]);
 	}
+
 	public function MyPostsPage($log_user_id){
 		$posts = User_Post::where('user_id',$log_user_id)->get();
 		return view('public.ToHomePageMenu.MyPostPage',['posts' => $posts,'log_user_id' => $log_user_id]);
 	}
+
+	public function DeletePost($log_user_id,$post_id)
+	{
+		User_Post::where('id',$post_id)->delete();
+		return redirect("/HomePage/" . $log_user_id . "/MyPosts");
+	}
+
+	public function FormUpDatePost($log_user_id,$post_id){
+		$post = User_Post::where('id',$post_id)->get();
+		return view('public.ToHomePageMenu.UpDatePost',['log_user_id' => $log_user_id, 'post' => $post]);
+	}
+
+	public function UpDatePost($log_user_id,$post_id,Request $request)
+	{
+		$validation = $this->validate($request,[
+			"head" => "min:5|max:25",
+			"body" => "min:10"
+		]);
+		$UpDatePost = User_Post::where('id',$post_id)->update(['head' => $request['new_head'],'body' => $request['new_body']]);
+		return redirect("/HomePage/" . $log_user_id . "/MyPosts");
+	}
+
+	public function CommentsPost($log_user_id,$post_id)
+	{
+		//ToDo
+	}
+
 	public function RegisterValidation(Request $request)
 	{
 		$validation = $this->validate($request,[

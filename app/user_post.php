@@ -10,4 +10,6 @@ class User_post extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
     public $incrementing = false;
+    protected $fillable = ['head'];
+    
 }

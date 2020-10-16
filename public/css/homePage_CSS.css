@@ -48,3 +48,30 @@ li a:hover{
 	text-align:center;
 	font-family: sans-serif;
 }
+h3{
+	text-align: center;
+	font-size: 20px;
+}
+.body_text{
+	font-size: 20px;
+	font-family: sans-serif;
+}
+.Close_btn{
+	border:none;
+	background-color: #ED6B5E;
+}
+.row_posts{
+	background-color: white;
+}
+.create-comment-btn{
+	background-color: white;
+}
+button{
+	border:none;
+	background-color: #1C99D8;
+	padding: 15px 20px;
+	border-radius: 5px;
+	border:1px solid black;
+	color:white;
+	margin-left: 90%;
+}
