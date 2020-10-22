@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\user_post;
+use App\Models\Comment;
 
 class HomeControler extends Controller
 {
@@ -25,7 +26,11 @@ class HomeControler extends Controller
 		$posts = User_Post::all();
 		return view('public.homePage',["log_user_id" => $log_user_id,"posts"=> $posts]);
 	}
-
+	public function ProfilePage($log_user_id)
+	{
+		$user_data = User::where("id",$log_user_id)->get();
+		return view('public.ToHomePageMenu.ProfilePage',['log_user_id' => $log_user_id,'user_data' => $user_data]);
+	}
 	public function MyPostsPage($log_user_id){
 		$posts = User_Post::where('user_id',$log_user_id)->get();
 		return view('public.ToHomePageMenu.MyPostPage',['posts' => $posts,'log_user_id' => $log_user_id]);
@@ -52,9 +57,17 @@ class HomeControler extends Controller
 		return redirect("/HomePage/" . $log_user_id . "/MyPosts");
 	}
 
-	public function CommentsPost($log_user_id,$post_id)
-	{
-		//ToDo
+	public function CommentsPost(Request $request,$log_user_id,$post_id)
+	{	
+		$validation = $this->validate($request,[
+			"comment" => "required"
+		]);
+		$comment = new Comment();
+		$comment->posts_id = $post_id;
+		$comment->user_name = User::where("id",$log_user_id)->first()->fname;
+		$comment->comment = $request["comment"];
+		$comment->save();
+		return redirect("/HomePage/" . $log_user_id);
 	}
 
 	public function RegisterValidation(Request $request)

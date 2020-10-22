@@ -28,8 +28,9 @@ Route::get('/HomePage/{log_user_id}/MyPosts/UpDate/{post_id}',[HomeControler::cl
 //UpDate post validation route
 Route::post('/HomePage/{log_user_id}/MyPosts/UpDate/{post_id}',[HomeControler::class,"UpDatePost"]);
 //Comment post route
-Route::get('/HomePage/{log_user_id}/MyPosts/Comment/{post_id}',[HomeControler::class,"CommentsPost"]);
+Route::post('/HomePage/{log_user_id}/MyPosts/Comment/{post_id}',[HomeControler::class,"CommentsPost"]);
 //news posts route
 Route::post('/HomePage/Create/{log_user_id}',[HomeControler::class,"CreateValidation"]);
 //Welcome page Route
+Route::get('/HomePage/Profile/{log_user_id}',[HomeControler::class,"ProfilePage"]);
 Route::get('/',[HomeControler::class,"WelcomePage"]);

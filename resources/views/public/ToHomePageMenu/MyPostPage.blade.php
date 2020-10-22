@@ -16,7 +16,7 @@
 				<?php
 					$count = 1;
 					for ($i = 0;$i<strlen($value->body);$i++) {
-						if($count == 150){
+						if($count == 120){
 							echo '<br>';
 							$count = 0;
 						}
@@ -25,7 +25,7 @@
 					}
 				?>
 				</p>
-				<button class="Close_btn">close</button>
+				<button class="Close_btn" id="{{$value->id}}">close</button>
 			</div>
 			<ul>
 				<li class="Del_btn"><a href="{{url('/HomePage/' . $log_user_id . '/MyPosts/Deleate/' . $value->id)}}">Deleate</a></li>
@@ -41,7 +41,9 @@
 			$(".See_btn").on("click",function(){
 				$("#b" + $(this).attr("id")).show(500);
 			});
-			
+			$(".table_posts").on("click",".row_posts .body_div .Close_btn",function(){
+				$("#b" + $(this).attr("id")).hide(500);
+			});
 		});
 	</script>
 </body>

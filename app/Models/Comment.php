@@ -1,18 +1,19 @@
 <?php
+
 namespace App\Models;
 
-use  Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-class User extends Model
+
+class Comment extends Model
 {
-	protected $table = 'user';
+    protected $table = 'comments';
     protected $primaryKey = 'id';
     public $timestamps = false;
     public $incrementing = false;
-    public function getAllDatafor($id)
+    public function getCommentsById($id)
     {
-    	return User::where("id",$id)->get();
+    	return Comment::where("posts_id",$id)->get();
     }
 }
-?>

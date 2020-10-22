@@ -1,5 +1,5 @@
 body{
-	background-image: url('../img/blogHome.jpg');
+	background-image: linear-gradient(to right,#111,#333,#131);
 	padding: 0;
 	margin: 0;
 }
@@ -53,25 +53,40 @@ h3{
 	font-size: 20px;
 }
 .body_text{
-	font-size: 20px;
+	font-size: 15px;
 	font-family: sans-serif;
+	display: none;
 }
 .Close_btn{
 	border:none;
 	background-color: #ED6B5E;
 }
-.row_posts{
+.row_posts{ 
 	background-color: white;
 }
-.create-comment-btn{
-	background-color: white;
+.create-comment{
+	display:none;
+	margin-left: 10px;
 }
 button{
 	border:none;
 	background-color: #1C99D8;
-	padding: 15px 20px;
+	padding: 5px 10px;
 	border-radius: 5px;
-	border:1px solid black;
 	color:white;
-	margin-left: 90%;
+}
+.btns{
+	margin-left: 70%;
+}
+.body_div{
+	padding: 5px;
+	margin-left: 30%;
+	margin-right: 30%;
+}
+textarea{
+	resize: none;
+}
+.comments{
+	background-color: lightblue;
+	margin-right: 5px;
 }
