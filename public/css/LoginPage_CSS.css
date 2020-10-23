@@ -52,8 +52,12 @@ p
 .errors_div{
 	padding: 25px 20px; 
 }
-span{
-	padding: 5px 5px;
+ul{
+	margin-left:-10%;
+}
+li{
+	list-style-type: none;
+	margin-top: 5px;
 	background-color: #F78181;
 	color:red;
 	border-radius: 10px;

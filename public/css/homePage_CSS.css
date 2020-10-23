@@ -90,3 +90,12 @@ textarea{
 	background-color: lightblue;
 	margin-right: 5px;
 }
+.sbmt_btn{
+	background-color: #333;
+	color:white;
+	border:none;
+}
+.sbmt_btn:hover {
+	background-color: #111;
+	color:red;
+}

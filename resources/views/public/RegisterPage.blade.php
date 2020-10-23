@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div class="form_div">
-		<form method="post" action="{{url('/register')}}">
+		<form method="post" action="{{asset('/test/register')}}">
 			{{@csrf_field()}}
 			<div class="logo_form_div">
 				<img src="{{asset('img/blogIcon.png')}}">

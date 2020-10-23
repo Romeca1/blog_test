@@ -50,8 +50,8 @@ class HomeControler extends Controller
 	public function UpDatePost($log_user_id,$post_id,Request $request)
 	{
 		$validation = $this->validate($request,[
-			"head" => "min:5|max:25",
-			"body" => "min:10"
+			"head" => "required|min:5|max:25",
+			"body" => "required|min:10"
 		]);
 		$UpDatePost = User_Post::where('id',$post_id)->update(['head' => $request['new_head'],'body' => $request['new_body']]);
 		return redirect("/HomePage/" . $log_user_id . "/MyPosts");
@@ -89,9 +89,9 @@ class HomeControler extends Controller
 	public function LoginValidation(Request $require){
 		$user = User::where(['email' => $require["email"],'password' => $require['pass']])->first();
 		if(is_null($user)){
-			return view('public.LoginPage',['error' => 'Invalid email or password']); 
+			 view('public.LoginPage',['error' => 'Invalid email or password']); 
 		}
-		return view('public.homePage',['user_name' => $user['name'],'log_user_id' => $user['id']]);
+		return redirect('/HomePage/' . $user['id']);
 	}
 	public function CreateValidation(Request $require,$log_user_id){
 		$validation = $this->validate($require,[

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use App\Http\Controllers\HomeControler;
+use App\Http\Controllers\UserController;
 
 Route::get('/register',[HomeControler::class, "Register_form"]);
 
@@ -34,3 +35,8 @@ Route::post('/HomePage/Create/{log_user_id}',[HomeControler::class,"CreateValida
 //Welcome page Route
 Route::get('/HomePage/Profile/{log_user_id}',[HomeControler::class,"ProfilePage"]);
 Route::get('/',[HomeControler::class,"WelcomePage"]);
+////
+Route::get('/test/register',[UserController::class,"ShowRegisterFrom"]);
+Route::post('/test/register',[UserController::class,"RegisterValidating"]);
+Route::get('/test/login',[UserController::class,"ShowLoginForm"]);
+Route::post('/test/login',[UserController::class,"LoginValidating"]);

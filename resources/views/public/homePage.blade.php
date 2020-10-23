@@ -3,6 +3,7 @@
 <head>
 	<title>home page</title>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/homePage_CSS.css')}}">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<script type="text/javascript" src="{{asset('js/jQuery.js')}}"></script>
 </head>
 <body>
@@ -40,9 +41,9 @@
 							url('/HomePage/' . $log_user_id . '/MyPosts/Comment/' . $value->id)
 						}}">
 						{{csrf_field()}}
-							<textarea name="comment" placeholder="Comment:" rows="5" cols="65"></textarea>
+							<textarea name="comment" placeholder="Enter your comment:" rows="5" cols="65"></textarea>
 							<br>
-							<input type="submit" value="comment">
+							<input class="sbmt_btn" type="submit" value="comment">
 						</form>
 						<div class="comments">
 							@foreach(App\Models\Comment::where("posts_id",$value->id)->get() as 	$comment)
@@ -69,6 +70,7 @@
 			@endforeach
 		@endif
 	</div>
+	
 	<script>
 		$(document).ready(function() {
 			$(".body_div").on("click",".row_posts .btns .btn_see",function() {
